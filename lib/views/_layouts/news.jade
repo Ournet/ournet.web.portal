@@ -1,0 +1,46 @@
+extends ./normal
+
+block normal_content
+  #layout-content.clearfix
+    .container
+      #top-pcl
+        .ref-bg.domain-
+        .ref-bg.domain-10
+        .ref-bg.domain-20
+        .ref-bg.domain-30
+        .ref-bg.domain-40
+        .ref-bg.domain-50
+        .ref-bg.domain-60
+        .ref-bg.domain-70
+        .ref-bg.domain-80
+        .ref-bg.domain-90
+      .page-container
+        .row
+          //- main content
+          .col-sm-8.col-md-6
+            block main_content
+
+          //- second content
+          .col-sm-4.col-md-4
+            block second_content
+              .tab.view-ads.view-fill.gads-300-250
+                include ../controls/ads_300
+            
+          //- right content
+          .col-md-2
+            .tab.clearfix
+              .tab-title
+                span.pull-right= __('24_hrs')
+                h4= __('trending')
+              .tab-content
+                .list.ot-topic.view-trending
+                  each item in trendingTopics
+                    .item.media
+                      a.pull-left(href=links.topic(item.uniqueName, {ul: currentCulture.lang}))
+                        img.media-object.lazy(alt='', src='data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==' data-original='//cdn.entipic.com/'+currentCulture.country+'/'+item.uniqueName+'.jpg')
+                      .media-body
+                        a(title=item.name, href=links.topic(item.uniqueName, {ul: currentCulture.lang}))= (item.abbr || item.name)
+                        .details= '+'+item.counts.trend24h
+
+    if (oneList)
+      include ../controls/one_list_container
