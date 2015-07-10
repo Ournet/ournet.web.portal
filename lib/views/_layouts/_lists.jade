@@ -4,7 +4,7 @@ mixin storiesRowView(list, itemClass)
       - var url=newsUrl(links.story(item.uniqueName, item.id, {ul: currentCulture.lang}))
       .list-item.ot-story(class=(itemClass || 'col-sm-6 col-xs-4'))
         .item.ot-story.hover-action.ref-border-top_hover(class='domain-'+(item.category||''))
-          a.item-image(href=url)
+          a.item-image.fine-image(href=url)
             img(src=links.wi('medium', item.imageId))
           .item-body
             h3
@@ -82,7 +82,7 @@ mixin quoteListItem(item, options)
         i
       .item-author.media
         a.pull-left(href=newsUrl(links.topic(item.author.uniqueName, {ul: currentCulture.lang})))
-          img.media-object(src='http://cdn.entipic.com/'+currentCulture.country+'/'+item.author.uniqueName+'.jpg', alt='')
+          img.media-object(src=entipicImage(item.author, currentCulture), alt='')
         .media-body
           a.author-name(href=newsUrl(links.topic(item.author.uniqueName, {ul: currentCulture.lang})))= item.author.name
           span.details , 
