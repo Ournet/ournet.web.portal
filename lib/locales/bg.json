@@ -32,5 +32,6 @@
 	"news_count": "%d новини",
 	"video": "видео",
 	"category_title": "%s - Последни новини",
-	"language_bg": "Български"
+	"language_bg": "Български",
+	"popular_news": "Популярни новини"
 }

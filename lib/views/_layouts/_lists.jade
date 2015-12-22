@@ -1,8 +1,34 @@
 mixin storiesRowView(list, itemClass)
   .list.ot-story.view-row.row
     each item in list
-      - var url=newsUrl(links.story(item.uniqueName, item.id, {ul: currentCulture.lang}))
+      - var url=links.story(item.uniqueName, item.id, {ul: currentCulture.lang})
+      - var hasVideo = item.videos && item.videos.length > 0
       .list-item.ot-story(class=(itemClass || 'col-sm-6 col-xs-4'))
+        .item.ot-story.hover-action.ref-border-top_hover(class='domain-'+(item.category||''))
+          a.item-image.fine-image(href=url, class=(hasVideo ? 'video-image' : null))
+            img(src=links.wi('medium', item.imageId))
+            if (hasVideo)
+              span.video-icon
+                i
+          .item-body
+            h3
+              a(href=url)= item.title
+            .details= util.moment(item.createdAt).locale(currentCulture.lang).from(currentDate, true)
+              | , 
+              span.stats-badge(title=__('views'))= item.countViews
+                |  
+                span.icon.icon-views
+              if (item.videos)
+                | , 
+                span.stats-badge(title=__('video'))= item.videos.length
+                  |  
+                  span.icon.icon-video
+
+mixin storiesSetView(list, itemClass)
+  .list.ot-story.view-set
+    each item in list
+      - var url=newsUrl(links.story(item.uniqueName, item.id, {ul: currentCulture.lang}))
+      .ot-story(class=(itemClass || 'set-xs-2'))
         .item.ot-story.hover-action.ref-border-top_hover(class='domain-'+(item.category||''))
           a.item-image.fine-image(href=url)
             img(src=links.wi('medium', item.imageId))

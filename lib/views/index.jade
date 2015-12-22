@@ -36,10 +36,18 @@ block append content
                             span.stats-badge(title=__('views'))= mainStory.countViews
                               |  
                               span.icon.icon-views
+                  br
               .col-sm-6
                 +storiesRowView(stories)
             br
             +quotesRowView(quotes)
+
+            .tab
+              h3.tab-title= __('popular_news')
+              .tab-content
+                +storiesRowView(activeStories, 'col-sm-3 col-xs-6')
+
+
           //- right content
           .col-sm-12.col-md-2
             .tab.clearfix
@@ -55,4 +63,3 @@ block append content
                       .media-body
                         a(title=item.name, href=newsUrl(links.topic(item.uniqueName, {ul: currentCulture.lang})))= (item.abbr || item.name)
                         .details= '+'+item.counts.trend24h
-
