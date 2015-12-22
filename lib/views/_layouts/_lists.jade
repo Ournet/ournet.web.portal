@@ -1,7 +1,7 @@
 mixin storiesRowView(list, itemClass)
   .list.ot-story.view-row.row
     each item in list
-      - var url=links.story(item.uniqueName, item.id, {ul: currentCulture.lang})
+      - var url=newsUrl(links.story(item.uniqueName, item.id, {ul: currentCulture.lang}))
       - var hasVideo = item.videos && item.videos.length > 0
       .list-item.ot-story(class=(itemClass || 'col-sm-6 col-xs-4'))
         .item.ot-story.hover-action.ref-border-top_hover(class='domain-'+(item.category||''))
