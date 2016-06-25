@@ -1,5 +1,5 @@
 {
   "script": "index.js",
-  "max_memory_restart": "200M",
+  "max_memory_restart": "250M",
   "name": "ournet-portal"
 }
