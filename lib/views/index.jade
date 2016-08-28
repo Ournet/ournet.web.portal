@@ -1,65 +1,26 @@
 extends _layouts/normal
 
-block append content
-  #layout-content.clearfix
-    .container
-      #top-pcl
-        .ref-bg.domain-
-        .ref-bg.domain-10
-        .ref-bg.domain-20
-        .ref-bg.domain-30
-        .ref-bg.domain-40
-        .ref-bg.domain-50
-        .ref-bg.domain-60
-        .ref-bg.domain-70
-        .ref-bg.domain-80
-        .ref-bg.domain-90
-      .page-container
-        .row
-          //- main content
-          .col-sm-12.col-md-10
-            .row
-              .col-sm-6
-                if (mainStory)
-                  .list.ot-story.view-main
-                    .item.ot-story
-                      .row
-                        .col-xs-6.col-sm-12
-                          a.item-image.fine-image(href=newsUrl(links.story(mainStory.uniqueName, mainStory.id, {ul: currentCulture.lang})))
-                            img.story-img(alt='', src=links.wi('large', mainStory.imageId))
-                        .item-body.col-xs-6.col-sm-12
-                          h3
-                            a(href=newsUrl(links.story(mainStory.uniqueName, mainStory.id, {ul: currentCulture.lang})))= mainStory.title
-                          p= util.wrapAt(mainStory.summary, 250)
-                          .details= util.moment(mainStory.createdAt).locale(currentCulture.lang).from(currentDate, true)
-                            | , 
-                            span.stats-badge(title=__('views'))= mainStory.countViews
-                              |  
-                              span.icon.icon-views
-                  br
-              .col-sm-6
-                +storiesRowView(stories)
-            br
-            +quotesRowView(quotes)
-
-            .tab
-              h3.tab-title= __('popular_news')
-              .tab-content
-                +storiesRowView(activeStories, 'col-sm-3 col-xs-6')
-
-
-          //- right content
-          .col-sm-12.col-md-2
-            .tab.clearfix
-              .tab-title
-                span.pull-right= __('24_hrs')
-                h4= __('trending')
-              .tab-content
-                .list.ot-topic.view-trending
-                  each item in trendingTopics
-                    .item.media
-                      a.pull-left(href=newsUrl(links.topic(item.uniqueName, {ul: currentCulture.lang})))
-                        img.media-object.lazy(alt='', src='data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==' data-original=entipicImage(item, currentCulture))
-                      .media-body
-                        a(title=item.name, href=newsUrl(links.topic(item.uniqueName, {ul: currentCulture.lang})))= (item.abbr || item.name)
-                        .details= '+'+item.counts.trend24h
+block normal_content
+  //- fresh news
+  +storiesLargeView(latestStories.slice(0, 3), {itemClass: 'col-sm-4 col-xs-12', lazyImage: true})
+  +storiesSimpleView(latestStories.slice(3, 6), {listClass: 'row', itemClass: 'col-xs-12 col-sm-4'})
+  if (latestStories.length>6)
+    +storiesSimpleView(latestStories.slice(6, 9), {listClass: 'row', itemClass: 'col-xs-12 col-sm-4'})
+  //- pupular news
+  .section-header
+    h3.type-popular
+      a(href=newsUrl(links.news.popular({ul: currentCulture.lang})))= __('popular_news')
+      //- a(href=links.popular({ul: currentCulture.lang}))= __('popular_news')
+  +storiesLargeView(popularStories, {itemClass: 'col-sm-4 col-xs-12', lazyImage: true})
+  .section-header
+    h3.type-quotes
+      a(href=newsUrl(links.news.quotes({ul: currentCulture.lang})))= __('latest_quotes')
+  +quotesList(latestQuotes.slice(0, 3), {listClass: 'row', itemClass: 'col-xs-12 col-sm-4', wrapAt: 120})
+  +quotesList(latestQuotes.slice(3, 6), {listClass: 'row', itemClass: 'col-xs-12 col-sm-4', wrapAt: 120})
+  //- important news
+  if (importantStories)
+    .section-header
+      h3.type-important
+        a(href=newsUrl(links.news.important({ul: currentCulture.lang})))= __('important_news')
+        //- a(href=links.popular({ul: currentCulture.lang}))= __('popular_news')
+    +storiesLargeView(importantStories, {itemClass: 'col-sm-4 col-xs-12', lazyImage: true})

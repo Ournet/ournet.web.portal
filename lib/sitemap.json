@@ -15,5 +15,21 @@
   "actions": {
     "$absolute": true,
     "viewStory": "/actions/view_story/${0}"
+  },
+  "news": {
+    "$absolute": true,
+    "home": "/",
+    "topic": "/topic/${0}",
+    "story": "/story/${0}-${1}",
+    "item": "/item/${0}-${1}",
+    "quote": "/quote/${0}-${1}",
+    "popular": "/popular",
+    "quotes": "/quotes",
+    "important": "/important",
+    "sources": "/sources"
+  },
+  "weather": {
+    "$absolute": true,
+    "home": "/"
   }
 }

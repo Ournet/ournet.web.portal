@@ -1,7 +1,7 @@
 mixin storiesRowView(list, itemClass)
   .list.ot-story.view-row.row
     each item in list
-      - var url=newsUrl(links.story(item.uniqueName, item.id, {ul: currentCulture.lang}))
+      - var url=newsUrl(links.news.story(item.uniqueName, item.id, {ul: currentCulture.lang}))
       - var hasVideo = item.videos && item.videos.length > 0
       .list-item.ot-story(class=(itemClass || 'col-sm-6 col-xs-4'))
         .item.ot-story.hover-action.ref-border-top_hover(class='domain-'+(item.category||''))
@@ -27,7 +27,7 @@ mixin storiesRowView(list, itemClass)
 mixin storiesSetView(list, itemClass)
   .list.ot-story.view-set
     each item in list
-      - var url=newsUrl(links.story(item.uniqueName, item.id, {ul: currentCulture.lang}))
+      - var url=newsUrl(links.nws.story(item.uniqueName, item.id, {ul: currentCulture.lang}))
       .ot-story(class=(itemClass || 'set-xs-2'))
         .item.ot-story.hover-action.ref-border-top_hover(class='domain-'+(item.category||''))
           a.item-image.fine-image(href=url)
@@ -50,7 +50,7 @@ mixin newsSimpleView(list, options)
   - options = options || {};
   .list.ot-news.view-simple
     each item in list
-      - var url= options.isStory ? links.story(item.uniqueName, item.id, {ul: currentCulture.lang}) : links.item(item.uniqueName, item.id, {ul: currentCulture.lang})
+      - var url= options.isStory ? links.news.story(item.uniqueName, item.id, {ul: currentCulture.lang}) : links.news.item(item.uniqueName, item.id, {ul: currentCulture.lang})
       - url = newsUrl(url)
       - var imageUrl = options.isStory? links.wi('square', item.imageId) : links.wi.news('square', item.imageId);
       .list-item.ot-news
@@ -68,7 +68,7 @@ mixin newsSimpleView(list, options)
               = util.moment(item.createdAt).locale(currentCulture.lang).from(currentDate, true)
 
 mixin newsLargeViewItem(item, isStory)
-  - var url = isStory ? links.story(item.uniqueName, item.id, {ul: currentCulture.lang}) : links.item(item.uniqueName, item.id, {ul: currentCulture.lang})
+  - var url = isStory ? links.news.story(item.uniqueName, item.id, {ul: currentCulture.lang}) : links.news.item(item.uniqueName, item.id, {ul: currentCulture.lang})
   - url = newsUrl(url)
   - var imageUrl = isStory? links.wi('medium', item.imageId) : links.wi.news('medium', item.imageId);
   .item.ot-news.view-large.clearfix
@@ -101,22 +101,22 @@ mixin quoteListItem(item, options)
   .list-item.ot-quote(class=(options.cssClass || null))
     .item.ot-quote(class='domain-'+(item.category || ''))
       .item-body
-        a.item-name(href=newsUrl(links.quote(item.id, {ul: currentCulture.lang})))
+        a.item-name(href=newsUrl(links.news.quote(item.id, {ul: currentCulture.lang})))
           h4
             span.quote-mark “
             = util.wrapAt(item.text, options.wrapAt || 200)
         i
       .item-author.media
-        a.pull-left(href=newsUrl(links.topic(item.author.uniqueName, {ul: currentCulture.lang})))
+        a.pull-left(href=newsUrl(links.news.topic(item.author.uniqueName, {ul: currentCulture.lang})))
           img.media-object(src=entipicImage(item.author, currentCulture), alt='')
         .media-body
-          a.author-name(href=newsUrl(links.topic(item.author.uniqueName, {ul: currentCulture.lang})))= item.author.name
+          a.author-name(href=newsUrl(links.news.topic(item.author.uniqueName, {ul: currentCulture.lang})))= item.author.name
           span.details , 
             = util.moment(item.createdAt).locale(currentCulture.lang).from(currentDate, true)
           if (!options.noPage)
             if (currentDate.getTime() - new Date(item.createdAt).getTime() < 1000 * 60 * 60 * 24 * 10)
               .details
-                a(href=newsUrl(links.item(item.webpage.uniqueName, item.webpage.id)))= util.wrapAt(item.webpage.title, 100)
+                a(href=newsUrl(links.news.item(item.webpage.uniqueName, item.webpage.id)))= util.wrapAt(item.webpage.title, 100)
             else
               .details= util.wrapAt(item.webpage.title, 100)
 
