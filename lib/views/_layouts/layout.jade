@@ -5,7 +5,7 @@ block page_header_content
   .row
     .col-xs-4.col-sm-2
       #header-logo
-        a#logo(title=__(config.name), href=links.home({ul: currentCulture.language}))
+        a#logo(title=config.name, href=links.home({ul: currentCulture.language}))
         if (config.projects.length > 1)
           ul#header-projects
             each host, key in config.projects
