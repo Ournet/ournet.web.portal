@@ -31,5 +31,10 @@
   "news_count": "%d novinky",
   "video": "video",
   "category_title" : "%s - Poslední zprávy",
-  "popular_news": "Popular zprávy"
+  "popular_news": "Popular zprávy",
+  "news_sources": "Zprávy zdroje",
+  "latest_quotes": "Nejnovější prohlášení",
+  "info": "Info",
+  "useful": "Užitečný",
+  "important_news": "Důležité zprávy"
 }

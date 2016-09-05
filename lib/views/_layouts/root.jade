@@ -10,11 +10,11 @@ html(lang=currentCulture.language)
     block styles
     if (NODE_ENV==='production')
       if (site.platform === 'mobile')
-        link(type='text/css', rel='stylesheet', href='http://assets.ournetcdn.net/ournet/css/news/desktop/main-'+ config.assets.css.mainMobile +'.min.css')
+        link(type='text/css', rel='stylesheet', href='http://assets.ournetcdn.net/ournet/css/'+project.name+'/desktop/main-'+ config.assets.css.mainMobile +'.min.css')
       else
-        link(type='text/css', rel='stylesheet', href='http://assets.ournetcdn.net/ournet/css/news/desktop/main-'+ config.assets.css.main +'.min.css')
+        link(type='text/css', rel='stylesheet', href='http://assets.ournetcdn.net/ournet/css/'+project.name+'/desktop/main-'+ config.assets.css.main +'.min.css')
     else
-      link(type='text/css', rel='stylesheet', href='http://localhost:8044/css/news/'+site.platform+'/main.css')
+      link(type='text/css', rel='stylesheet', href='http://localhost:8044/css/'+project.name+'/'+site.platform+'/main.css')
     if (site.head.canonical)
       link(rel='canonical', href=site.head.canonical)
     link(rel='shortcut icon', href=config.favicon)
@@ -106,11 +106,11 @@ html(lang=currentCulture.language)
     script(type='text/javascript', src='//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js')
     if (NODE_ENV==='production')
       if (site.platform === 'mobile')
-        script(type='text/javascript', src='http://assets.ournetcdn.net/ournet/js/news/desktop/main-'+ config.assets.js.mainMobile +'.min.js')
+        script(type='text/javascript', src='http://assets.ournetcdn.net/ournet/js/'+project.name+'/desktop/main-'+ config.assets.js.mainMobile +'.min.js')
       else
-        script(type='text/javascript', src='http://assets.ournetcdn.net/ournet/js/news/desktop/main-'+ config.assets.js.main +'.min.js')
+        script(type='text/javascript', src='http://assets.ournetcdn.net/ournet/js/'+project.name+'/desktop/main-'+ config.assets.js.main +'.min.js')
     else
-      script(type='text/javascript', src='http://localhost:8044/js/news/'+site.platform+'/main.js')
+      script(type='text/javascript', src='http://localhost:8044/js/'+project.name+'/'+site.platform+'/main.js')
     block scripts
     
     script.

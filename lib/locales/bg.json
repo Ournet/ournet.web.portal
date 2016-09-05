@@ -33,5 +33,10 @@
 	"video": "видео",
 	"category_title": "%s - Последни новини",
 	"language_bg": "Български",
-	"popular_news": "Популярни новини"
+	"news_sources": "Новини източници",
+	"popular_news": "Популярни новини",
+	"latest_quotes": "Последните изявления",
+	"info": "Информация",
+	"useful": "Полезен",
+	"important_news": "Важно новини"
 }

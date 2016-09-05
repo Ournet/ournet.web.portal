@@ -30,6 +30,11 @@
 	"quotes_by_author": "Ugyanattól a szerzőtől",
 	"news_count": "%d hírek",
 	"video": "Videó",
-	"category_title" : "%s - Friss hírek",
-  "popular_news": "Népszerű hírek"
+	"category_title": "%s - Friss hírek",
+	"popular_news": "Népszerű hírek",
+	"news_sources": "Hírforrások",
+	"latest_quotes": "Legutóbbi nyilatkozatai",
+	"info": "Info",
+	"useful": "Hasznos",
+	"important_news": "Fontos hírek"
 }

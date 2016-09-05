@@ -31,5 +31,10 @@
   "news_count": "%d news",
   "video": "Video",
   "category_title" : "%s - Latest news",
-  "popular_news": "Popular news"
+  "popular_news": "Popular news",
+  "news_sources": "News sources",
+  "latest_quotes": "Latest Quotes",
+  "info": "Info",
+  "useful": "Useful",
+  "important_news": "Important News"
 }

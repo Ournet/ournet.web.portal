@@ -14,7 +14,7 @@
 	"exchange_rates": "Curs valutar",
 	"contact": "Contact",
 	"weather_cright": "weather_cright",
-	"international": "international",
+	"international": "International",
 	"share_on_format": "Trimite pe %s",
 	"views": "vizualizări",
 	"images": "imagini",
@@ -40,10 +40,11 @@
 	"video": "video",
 	"category_title": "%s - ultimele stiri",
 	"popular_news": "Stiri populare",
-	"portal": "portal",
-	"latest_quotes": "latest_quotes",
-	"important_news": "important_news",
-	"info": "info",
-	"useful": "useful",
-	"news_sources": "news_sources"
+	"news_sources": "Surse de stiri",
+	"latest_quotes": "Ultimele declarații",
+	"info": "Info",
+	"useful": "Util",
+	"important_news": "Știri importante",
+	"Ournet.ro": "Ournet.ro",
+	"Click.md": "Click.md"
 }

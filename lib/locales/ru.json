@@ -35,5 +35,11 @@
 	"page_topic_quotes_title": "%s - Заявления",
 	"page_topic_stories_title": "%s - События",
 	"category_title": "%s - Новости",
-	"popular_news": "Популярные новости"
+	"popular_news": "Популярные новости",
+	"news_sources": "Источники новостей",
+	"latest_quotes": "Последние заявления",
+	"info": "Информация",
+	"useful": "Полезно",
+	"important_news": "Важные новости",
+	"Click.md": "Click.md"
 }

@@ -31,5 +31,10 @@
   "news_count": "%d notizie",
   "video": "video",
   "category_title" : "%s - Ultime notizie",
-  "popular_news": "Notizie popolare"
+  "popular_news": "Notizie popolare",
+  "news_sources": "Fonti di notizie",
+  "latest_quotes": "Le ultime dichiarazione",
+  "info": "Informazione",
+  "useful": "Utile",
+  "important_news": "Notizie importanti"
 }
