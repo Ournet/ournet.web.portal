@@ -1,0 +1,4 @@
+.zs-list
+  each i in [1,2,3,4,5,6,7,8,9,10,11,12]
+    - var sign = util.signName(i, currentCulture.language)
+    a.zodiacs(class='zs-'+i, href='//'+links.horoscope.host+links.horoscope.sign(sign.slug,util.utm.horoscope), title=sign.name)

@@ -27,7 +27,7 @@ html(lang=currentCulture.language)
 
     link(rel='publisher', href='https://facebook.com/'+ config.domain)
     meta(property='og:site_name', content=config.name)
-    meta(property='og:updated_time', content=currentDate.toISOString())
+    meta(property='og:updated_time', content=currentDate.toDate().toISOString())
     meta(property='og:locale', content=site.simpleLocale)
     block meta
     if (metaFeeds)
@@ -79,7 +79,7 @@ html(lang=currentCulture.language)
                 |,  
                 each key in config.languages
                   if (key!=currentCulture.language)
-                    a(href=links.home({ul:key}))= config.languagesNames[key]
+                    a(href=links.portal.home({ul:key}))= config.languagesNames[key]
 
           #page-footer-portals.col-sm-4.col-xs-12
             h4= __('international')
@@ -91,8 +91,6 @@ html(lang=currentCulture.language)
                   = item[currentCulture.language]
           .col-sm-4.col-xs-12
             h4= __('useful')
-            div
-              a(href=newsUrl(links.news.sources({ul: currentCulture.lang})))= __('news_sources')
             each host, key in config.projects
               div
                 a(href='http://'+host)= __(key)
