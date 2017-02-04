@@ -75,8 +75,9 @@ mixin quotesList(list, options)
   - options = options || {}
   .list.ot-quote(class=(options.listClass || null))
     each item in list
-      .list-item.ot-quote(class=(options.itemClass || null))
-        +quoteItem(item, options)
+      if (item.author)
+        .list-item.ot-quote(class=(options.itemClass || null))
+          +quoteItem(item, options)
 
 mixin quoteItem(item, options)
   .item.ot-quote(class='domain-'+(item.category || '0'))
