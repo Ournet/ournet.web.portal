@@ -31,7 +31,7 @@
     "metno-symbols": "^0.1.0",
     "moment-timezone": "^0.5.3",
     "morgan": "^1.5.1",
-    "ournet.links": "^0.2.2",
+    "ournet.links": "^0.3.3",
     "ournet.logger": "^0.1.0",
     "ournet.utils": "^0.1.1",
     "ournet.web.data": "0.1.5",

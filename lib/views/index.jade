@@ -18,7 +18,7 @@ block normal_content
   if (config.projects.horoscope)
     #appear-horoscope.section-header
       h3.type-important
-        a(href='//'+links.horoscope.host+(links.horoscope.home(util.utm.horoscope)))= __('horoscope')
+        a(href='//'+links.horoscope.$host+(links.horoscope.home(util.utm.horoscope)))= __('horoscope')
     include ./controls/zodiac-list
 
   .section-header

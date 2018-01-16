@@ -14,12 +14,12 @@ block page_header_content
     .col-xs-8.col-sm-3
       ul#header-menu
         li.dd-item
-          a(href='//'+links.news.host+links.news.home({ul: currentCulture.lang}))= __('news')
+          a(href='//'+links.news.$host+links.news.home({ul: currentCulture.lang}))= __('news')
         li.dd-item
-          a(href='//'+links.weather.host+links.weather.home({ul: currentCulture.lang}))= __('weather')
+          a(href='//'+links.weather.$host+links.weather.home({ul: currentCulture.lang}))= __('weather')
         if (config.projects.horoscope)
           li.dd-item
-            a(href='//'+links.horoscope.host+links.horoscope.home({ul: currentCulture.lang}))= __('horoscope')
+            a(href='//'+links.horoscope.$host+links.horoscope.home({ul: currentCulture.lang}))= __('horoscope')
 
     .col-sm-7.hidden-xs
       #header-widgets
@@ -50,7 +50,7 @@ block page_header_content
               //- .shadow
               span.symbol.w-icon(class='wi-'+capitalCity.currentForecast.symbol.number, title=util.weather.symbolName(capitalCity.currentForecast.symbol, currentCulture.language))
               span.name
-                a(href='//'+links.weather.host+links.weather.place(capitalCity.id, {utm_source:'portal',utm_medium:'link',utm_campaign:'header-weather'}))= util.Place.getName(capitalCity, currentCulture.language)
+                a(href='//'+links.weather.$host+links.weather.place(capitalCity.id, {utm_source:'portal',utm_medium:'link',utm_campaign:'header-weather'}))= util.Place.getName(capitalCity, currentCulture.language)
                 span.no= capitalCity.currentForecast.t.value + '°C'
 
 block page_main_content
