@@ -42,7 +42,7 @@ block page_header_content
                       if(diff)
                         small(class="item-diff")= util.numberFormat(diff, 4, currentCulture.language)
                       .item-details
-                        a(href='//'+links.exchange.host)= __('exchange_rates')
+                        a(href='//'+links.exchange.$host)= __('exchange_rates')
                           |  ›
         .col-md-6.col-sm-12
           if (capitalCity && capitalCity.currentForecast)
